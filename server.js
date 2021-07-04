@@ -37,6 +37,18 @@ app.post('/api/notes', (req, res) => {
     return res.json(savedNotes);
 })
 
+app.delete("/api/notes/:id", (req, res) => {
+    let savedNotes = JSON.parse(fs.readFileSync('./Develop/db/db.json', 'utf8'));
+    for (let i = 0; i < savedNotes.length; i++) {
+        if (savedNotes[i].id == req.params.id) {
+            savedNotes.splice(i, 1);
+            break;
+        }
+    }
+    fs.writeFileSync("./Develop/db/db.json", JSON.stringify(savedNotes));
+    return res.json(savedNotes);
+});
+
 app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, './Develop/public/notes.html'));
 })
