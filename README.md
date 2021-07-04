@@ -13,6 +13,9 @@
 
   ### Usage
   Enter a title and message for your note.  Save and delete notes.
+  
+  ![Note-Taker](https://user-images.githubusercontent.com/80937296/124402263-caf33700-dcf4-11eb-9dc7-9cf63f86125b.png)
+
 
   ### Contributors
   
